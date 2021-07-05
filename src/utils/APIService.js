@@ -8,9 +8,19 @@ const APIService = ({ apiRoute, method }) => {
     setIsLoading(true)
     fetch(`https://jsonkeeper.com/b/${apiRoute}`, {
       method: method,
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
-      .then((response) => response.json())
-      .then((data) => setResponse(data))
+      .then((response) => {
+        console.log("RESPONSE", response)
+        response.json()
+      })
+      .then((data) => {
+        console.log("DATA", data)
+        setResponse(data)
+      })
       .then(() => setIsLoading(false))
       .catch((err) => console.error(err))
   }, [])
