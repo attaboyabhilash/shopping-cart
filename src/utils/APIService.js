@@ -14,7 +14,6 @@ const APIService = ({ apiRoute, method }) => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log("DATA", data)
         setResponse(data)
       })
       .then(() => setIsLoading(false))

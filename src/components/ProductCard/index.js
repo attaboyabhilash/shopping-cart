@@ -41,8 +41,8 @@ const ProductCard = ({ product, index }) => {
   const handleBuy = () => {
     setIsLoading(true)
     fetch(
-      `https://jolly-austin-1d1ebc.netlify.app/server/addToCart/index.post.json`,
-      { method: "POST" }
+      `https://jolly-austin-1d1ebc.netlify.app/server/addToCart/index.get.json`,
+      { method: "GET" }
     )
       .then((response) => response.json())
       .then((data) => {
