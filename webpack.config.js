@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.bundle.js",
+    clean: true,
   },
   devServer: {
     port: 4000,
