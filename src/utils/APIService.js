@@ -6,7 +6,9 @@ const APIService = ({ apiRoute, method }) => {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(`${process.env.BACKEND_URL}/${apiRoute}`, { method: method })
+    fetch(`${process.env.BACKEND_URL}/${apiRoute}`, {
+      method: method,
+    })
       .then((response) => response.json())
       .then((data) => setResponse(data))
       .then(() => setIsLoading(false))
