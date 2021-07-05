@@ -6,7 +6,7 @@ const APIService = ({ apiRoute, method }) => {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(`${process.env.BACKEND_URL}/${apiRoute}`, {
+    fetch(`https://jsonkeeper.com/b/${apiRoute}`, {
       method: method,
     })
       .then((response) => response.json())

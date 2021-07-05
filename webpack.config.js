@@ -2,6 +2,7 @@ const path = require("path")
 const HTMLPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const Dotenv = require("dotenv-webpack")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 module.exports = {
   entry: "./src/index.js",
@@ -37,7 +38,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              outputPath: "assets/images/",
+              outputPath: "static/images/",
             },
           },
         ],
@@ -59,5 +60,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new Dotenv(),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "static" }],
+    }),
   ],
 }
