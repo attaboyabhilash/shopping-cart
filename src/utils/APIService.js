@@ -6,7 +6,7 @@ const APIService = ({ apiRoute, method }) => {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(`${process.env.BACKEND_URL}/server/${apiRoute}/index.get.json`, {
+    fetch(`/server/${apiRoute}/index.get.json`, {
       method: method,
     })
       .then((response) => response.json())

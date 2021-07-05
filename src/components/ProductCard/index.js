@@ -40,7 +40,7 @@ const ProductCard = ({ product, index }) => {
 
   const handleBuy = () => {
     setIsLoading(true)
-    fetch(`${process.env.BACKEND_URL}/server/addToCart/index.get.json`, {
+    fetch(`/server/addToCart/index.get.json`, {
       method: "GET",
     })
       .then((response) => response.json())
