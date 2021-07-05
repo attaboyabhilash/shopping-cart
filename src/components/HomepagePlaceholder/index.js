@@ -5,7 +5,7 @@ import styles from "./HomepagePlaceholder.module.scss"
 
 const HomepagePlaceholder = () => {
   const { response, isLoading } = APIService({
-    apiRoute: "WJTF",
+    apiRoute: "categories",
     method: "GET",
   })
 

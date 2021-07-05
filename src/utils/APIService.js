@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import axios from "axios"
 
 const APIService = ({ apiRoute, method }) => {
   const [response, setResponse] = useState([])
@@ -7,12 +6,13 @@ const APIService = ({ apiRoute, method }) => {
 
   useEffect(() => {
     setIsLoading(true)
-    axios
-      .get(`https://jsonkeeper.com/b/${apiRoute}`)
-      .then((response) => {
-        console.log("RESPONSE", response)
-        response.json()
-      })
+    fetch(
+      `https://jolly-austin-1d1ebc.netlify.app/server/${apiRoute}/index.get.json`,
+      {
+        method: method,
+      }
+    )
+      .then((response) => response.json())
       .then((data) => {
         console.log("DATA", data)
         setResponse(data)

@@ -8,7 +8,7 @@ import SideNavbar from "../components/SideNavbar"
 const Products = () => {
   document.title = "Products | Shopping Cart"
   const { response, isLoading } = APIService({
-    apiRoute: "XS3K",
+    apiRoute: "products",
     method: "GET",
   })
 
