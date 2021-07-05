@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import axios from "axios"
 
 const APIService = ({ apiRoute, method }) => {
   const [response, setResponse] = useState([])
@@ -6,13 +7,8 @@ const APIService = ({ apiRoute, method }) => {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(`https://jsonkeeper.com/b/${apiRoute}`, {
-      method: method,
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    axios
+      .get(`https://jsonkeeper.com/b/${apiRoute}`)
       .then((response) => {
         console.log("RESPONSE", response)
         response.json()
