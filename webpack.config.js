@@ -61,7 +61,7 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new Dotenv(),
     new CopyWebpackPlugin({
-      patterns: [{ from: "static" }],
+      patterns: [{ from: "static", to: "static" }],
     }),
   ],
 }
