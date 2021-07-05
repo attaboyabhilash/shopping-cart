@@ -7,7 +7,7 @@ const Slider = () => {
   const [intervalId, setIntervalId] = useState(null)
 
   const { response, isLoading } = APIService({
-    apiRoute: "9STJ",
+    apiRoute: "KHFH",
     method: "GET",
   })
 

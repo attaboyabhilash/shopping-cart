@@ -8,7 +8,7 @@ const APIService = ({ apiRoute, method }) => {
     setIsLoading(true)
     fetch(`https://jsonkeeper.com/b/${apiRoute}`, {
       method: method,
-      mode: "no-cors",
+      cors: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
