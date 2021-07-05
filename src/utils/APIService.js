@@ -6,12 +6,9 @@ const APIService = ({ apiRoute, method }) => {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(
-      `https://jolly-austin-1d1ebc.netlify.app/server/${apiRoute}/index.get.json`,
-      {
-        method: method,
-      }
-    )
+    fetch(`${process.env.BACKEND_URL}/server/${apiRoute}/index.get.json`, {
+      method: method,
+    })
       .then((response) => response.json())
       .then((data) => {
         setResponse(data)

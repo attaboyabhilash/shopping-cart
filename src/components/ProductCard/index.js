@@ -40,10 +40,9 @@ const ProductCard = ({ product, index }) => {
 
   const handleBuy = () => {
     setIsLoading(true)
-    fetch(
-      `https://jolly-austin-1d1ebc.netlify.app/server/addToCart/index.get.json`,
-      { method: "GET" }
-    )
+    fetch(`${process.env.BACKEND_URL}/server/addToCart/index.get.json`, {
+      method: "GET",
+    })
       .then((response) => response.json())
       .then((data) => {
         setMessage(data)
@@ -98,7 +97,7 @@ const ProductCard = ({ product, index }) => {
               className={styles.buyBtn}
               onClick={() => handleBuy()}
             >
-              Buy Now{" "}
+              {isLoading ? <span className={styles.spinner} /> : null} Buy Now{" "}
               <span className={styles.buttonPrice}>@ MRP Rs. {price}</span>
             </button>
           ) : (
